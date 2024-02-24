@@ -1,0 +1,32 @@
+<div *ngIf="loading" class="loading">Loading...</div>
+<div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+<div class="conainter">
+  <div class="card-container">
+    <div class="planet-container">
+      <div class="planet-card" *ngFor="let planet of planets" (mouseenter)="fetchResidents(planet)">
+        <div class="card-front">
+          <h2>{{ planet.name }}</h2>
+          <p>Climate: {{ planet.climate }}</p>
+          <p>Population: {{ planet.population }}</p>
+          <p>Terrain: {{ planet.terrain }}</p>
+        </div>
+        <div class="card-back">
+          <h3>Residents:</h3>
+            <div *ngFor="let resident of planet.residentsData" class="resData">
+              <div class="info">
+                <p>Name: {{ resident.name }}</p>
+                <p>Height: {{ resident.height }}</p>
+                <p>Mass: {{ resident.mass }}</p>
+                <p>Gender: {{ resident.gender }}</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ <div class="pagination">
+    <button mat-raised-button color="primary" [disabled]="currentPage === 1" (click)="onPreviousPage() ">Previous</button>
+    <span>Page {{ currentPage }}</span>
+    <button mat-raised-button color="primary" [disabled]="!nextPage" (click)="onNextPage()">Next</button>
+  </div>

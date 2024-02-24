@@ -1,0 +1,131 @@
+
+
+
+
+.conainter{
+  box-sizing: border-box;
+  position: relative;
+}
+
+.card-container{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  margin: 45px;
+}
+.planet-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .planet-card {
+    width: 350px;
+    height: 700px;
+    perspective: 1000px;
+    margin: 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    
+  }
+  .card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    overflow: hidden;
+}
+.card-front h2{
+  font-size: 45px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.card-front p{
+  font-size: larger;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+  .card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+    background-image: url("../../assets/resize.jpg");
+    background-repeat: no-repeat;
+    object-fit: cover;
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+    overflow: auto;
+    height: 100%;
+  }
+  .card-back h3{
+    font-size: larger;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .resData {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+  }
+  
+  .info p{
+    font-size: large;
+    text-align: left;
+    
+  }
+  
+  .resData div {
+    flex-basis: calc(50% - 10px); /* Adjust this value as needed */
+    box-sizing: border-box;
+    margin: 5px;
+    overflow: auto;
+  }
+  
+
+  .residents-title {
+    text-align: center;
+  }
+  
+  .resident {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+  
+  .resident p {
+    flex: 0 0 48%;
+    margin: 0;
+  }
+  .card-back ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .card-back::-webkit-scrollbar {
+    width: 0px;  
+  }
+  
+  .planet-card:hover .card-front {
+    transform: rotateY(-180deg);
+  }
+  
+  .planet-card:hover .card-back {
+    transform: rotateY(0deg);
+  } 
+
+  .pagination{
+    margin: 20px;
+    position: absolute;
+    left: 40%;
+  }
