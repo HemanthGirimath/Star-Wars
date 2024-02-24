@@ -50,6 +50,9 @@
   font-weight: 400;
   letter-spacing: 2px;
 }
+.laoding{
+  align-self: center;
+}
   .card-front, .card-back {
     width: 100%;
     height: 100%;
